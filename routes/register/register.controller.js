@@ -2,7 +2,8 @@ const { Client } = require('pg')
 const {pool} =require('../../config/dbconnect')
 const bcrypt = require('bcrypt');
 const {Resend}=require('resend');
-require('dotenv').config(process.env.RESEND_API);
+const resend = new Resend(process.env.RESEND_API);
+require('dotenv').config();
 function checkPasswordStrength(password){
   let uppercase=0,number=0;
   var character='';

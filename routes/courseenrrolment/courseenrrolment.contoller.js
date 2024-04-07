@@ -1,8 +1,8 @@
 const { Client } = require('pg')
 const {pool} =require('../../config/dbconnect')
 const {Resend}=require('resend');
-require('dotenv').config(process.env.RESEND_API);
-const resend = new Resend();
+require('dotenv').config();
+const resend = new Resend(process.env.RESEND_API);
 function isEnrroled(courseArr,courseId){
 return courseArr.includes(courseId);
 }
