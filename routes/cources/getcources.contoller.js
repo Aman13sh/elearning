@@ -10,8 +10,7 @@ async function getCources(req,res){
         //fetching cousrces 
         const query = {
           name: 'fetch-cources',
-          text: 'SELECT * FROM courseDetails WHERE c_Name = $1',
-          values: [courseName],
+          text: 'SELECT * FROM courseDetails',
         }
         coursePresence = await client.query(query);
         return res.status(200).json(coursePresence.rows);
