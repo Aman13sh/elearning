@@ -1,4 +1,5 @@
 const express = require('express');
+var morgan = require('morgan')
 const registerRouter= require('./routes/register/register.router.js')
 const loginRouter= require('./routes/login/login.router.js')
 const updateRouter= require('./routes/updateprofiles/update.router.js')
@@ -8,7 +9,7 @@ const enrollRouter = require('./routes/courseenrrolment/courseenrollment.router.
 const getenrollmentRouter = require('./routes/getenrollment/getenrollment.router.js');
 const app=express();
 
- 
+app.use(morgan('combined'));
 app.use(express.json());
 
 const cloudinary=require("./config/cloundary.js");
