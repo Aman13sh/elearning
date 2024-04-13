@@ -44,12 +44,12 @@ async function enrollUser(req,res){
  
     try{
         await client.query(text, values)
-        res.status(200).json({sucess:true,message:"User is created"});
+        res.status(200).json({sucess:true,message:"User is Enrollerd"});
    
       }
       catch(error){
         console.log(error);
-          return res.status(400).json({sucess:false,message:"Uer not created"});
+          return res.status(400).json({sucess:false,message:"User is not enrolled"});
       }
     finally {
       client.release();

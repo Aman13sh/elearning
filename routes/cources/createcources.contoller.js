@@ -55,11 +55,11 @@ async function createcources(req,res){
     // Posting course details
     try{
       await client.query(text, values)
-      return res.status(200).json({sucess:true,message:"User is created"});
+      return res.status(200).json({sucess:true,message:"Course is Created"});
       }
       catch(error){
         console.log(error);
-          return res.status(400).json({sucess:false,message:"Uer not created"});
+          return res.status(400).json({sucess:false,message:"Course is not created"});
       }
     finally {
       client.release();
@@ -108,11 +108,11 @@ async function  deletecources(req,res){
    const values = [courseId];
    try{
     await client.query(text, values)
-    return res.status(200).json({sucess:true,message:"User is created"});
+    return res.status(200).json({sucess:true,message:"course is deleted"});
     }
     catch(error){
       console.log(error);
-        return res.status(400).json({sucess:false,message:"Course is deleted"});
+        return res.status(400).json({sucess:false,message:"Course is not deleted"});
     }
   finally {
     client.release();
